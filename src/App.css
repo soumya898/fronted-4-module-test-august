@@ -6,11 +6,12 @@ nav {
 }
 
 /* Home Page styling starts */
+/* Home Page styling starts */
 .home-container {
     padding: 0 2rem;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr); /* Display three posts per row */
+    grid-template-rows: auto; /* Let rows adjust to content */
     gap: 1rem;
 }
 

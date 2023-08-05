@@ -74,6 +74,15 @@ function App() {
     },
   };
 
+  const searchStyles = {
+    width: '100%', // Set the width to 100% to fit the container
+    padding: '8px',
+    border: '1px solid #ccc',
+    borderRadius: '4px',
+    marginTop: '10px',
+    boxSizing: 'border-box',
+  };
+
   return (
     <div className="App">
       <nav style={navStyles}>
@@ -93,6 +102,10 @@ function App() {
           </Link>
         </div>
       </nav>
+      <h1 style={{ textAlign: 'center', margin: '20px 0', fontSize: '24px' }}>
+        Social Media For Travellers
+      </h1>
+      <input type="text" placeholder="Search..." style={searchStyles} />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/item/:id" element={<DetailsPage />} />

@@ -6,7 +6,6 @@ import { addToDetails } from "../redux/actions/detailsActions";
 
 const HomePage = () => {
     const { loading, posts, error } = useSelector(state => state.posts);
-    console.log(loading, posts, error)
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -22,9 +21,11 @@ const HomePage = () => {
     if (loading) return <h1>Loading...</h1>
     if (error) return <h1>{error}</h1>
 
+    const postsToDisplay = posts.slice(0, 6); // Limit to the first 6 posts
+
     return (
         <div className="home-container">
-            {posts && posts.map((post) => {
+            {postsToDisplay.map((post) => {
                 return (
                     <div className="post" key={post.id} onClick={() => {
                         handleCardDetails(post)
@@ -41,4 +42,4 @@ const HomePage = () => {
     )
 }
 
-export default HomePage
+export default HomePage;
